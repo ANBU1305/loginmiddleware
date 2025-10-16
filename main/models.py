@@ -1,22 +1,18 @@
-from mongoengine import Document, StringField, EmailField, DictField, ListField, ReferenceField
-from mongoengine.fields import EmbeddedDocumentField
-from mongoengine import EmbeddedDocument
+# authentication_api/models.py
 
-# You won't use django.contrib.auth.models.User directly,
-# instead, define your own User document or link with ObjectId.
+from mongoengine import Document, StringField, EmailField, DictField, ListField, ReferenceField
 
 class User(Document):
-    # Simplified user document for example
     username = StringField(required=True, unique=True)
-    email = EmailField(required=True)
-    # add other fields as needed
+    password = StringField(required=True)  # For now, store raw or hashed manually
+    email = EmailField(required=True, unique=True)
 
 class UserLogin(Document):
-    user = ReferenceField(User, required=True, unique=True)  # like OneToOneField
+    user = ReferenceField(User, required=True, unique=True)  # Like OneToOne
     name = StringField(max_length=100, required=True)
     email = EmailField(required=True)
-    address = DictField()  # for JSON-like data
-    hobbies = ListField(StringField())  # for a list of hobbies
-    
+    address = DictField()
+    hobbies = ListField(StringField())
+
     def __str__(self):
         return self.name

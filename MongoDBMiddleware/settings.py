@@ -25,7 +25,7 @@ SECRET_KEY = 'iwilyk&5ygjwf+xrdhd06p=r+x)#lz85ar=r_aa8n1-qfoth)v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.109.49.80','localhost']
+ALLOWED_HOSTS = ['13.232.47.82','localhost']
 
 
 # Application definition
@@ -81,6 +81,12 @@ WSGI_APPLICATION = 'MongoDBMiddleware.wsgi.application'
 
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # anbumay131998_db_user
 

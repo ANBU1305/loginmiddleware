@@ -1,7 +1,7 @@
 # authentication_api/swagger_schemas.py
 
 from drf_yasg import openapi
-from .serializers import UserSerializerWithProfile
+from .serializers import UserLoginSerializer
 
 # Login request body
 login_request_schema = openapi.Schema(
@@ -14,4 +14,4 @@ login_request_schema = openapi.Schema(
 )
 
 # Register request body uses the DRF serializer directly
-register_request_body = UserSerializerWithProfile
+register_request_body = UserLoginSerializer
