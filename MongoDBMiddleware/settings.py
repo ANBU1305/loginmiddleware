@@ -25,7 +25,7 @@ SECRET_KEY = 'iwilyk&5ygjwf+xrdhd06p=r+x)#lz85ar=r_aa8n1-qfoth)v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.109.49.80','localhost']
 
 
 # Application definition
@@ -82,13 +82,17 @@ WSGI_APPLICATION = 'MongoDBMiddleware.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'Middleware_DB',   # your DB name
+        'NAME': 'LoginMiddlware',   # your DB name
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb://localhost:27017',
+            'host': 'mongodb+srv://anbumay131998_db_user:ywdQxMyY22zXzV6d@loginmiddlware.bpn4a0i.mongodb.net/?retryWrites=true&w=majority&appName=LoginMiddlware',
         }
     }
 }
+
+
+
+# anbumay131998_db_user
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
