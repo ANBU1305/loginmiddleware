@@ -79,16 +79,6 @@ WSGI_APPLICATION = 'MongoDBMiddleware.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'LoginMiddlware',   # your DB name
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://anbumay131998_db_user:ywdQxMyY22zXzV6d@loginmiddlware.bpn4a0i.mongodb.net/?retryWrites=true&w=majority&appName=LoginMiddlware',
-        }
-    }
-}
 
 
 
